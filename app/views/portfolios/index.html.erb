@@ -6,6 +6,11 @@
 <p>Title: <%=item.title%> </p>
 <p>Subtitle: <%=item.subtitle%> </p>
 <p>Body: <%=item.body%> </p>
+
+<% if item.thumb_image? %>
 <%= image_tag item.thumb_image %>
+
+<% end %>
+
 <% end %>
 

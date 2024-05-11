@@ -1,5 +1,5 @@
 <h1>create a new portfolio</h1>
-<%= form_with(@portfolio) do |form| %>
+<%= form_for(@portfolio) do |form| %>
 <% if @portfolio.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(@portfolio.errors.count, "error") %> prohibited this portfolio from being saved:</h2>
