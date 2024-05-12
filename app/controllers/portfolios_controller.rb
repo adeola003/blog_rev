@@ -29,6 +29,15 @@ class PortfoliosController < ApplicationController
   end
 
   def update
+    respond_to do |format|
+      if @portfolio.update(portfolio_params)
+        format.html { redirect_to portfolios_path, notice: "portfolio was successfully updated." }
+        format.json { render :show, status: :ok, location: @portfolio }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @portfolio.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   private
