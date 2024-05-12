@@ -1,5 +1,7 @@
 class PortfoliosController < ApplicationController
 
+  before_action :set_portfolio, only: [:edit, :update, :show, :destroy]
+
   def index
     @portfolios = Portfolio.all
   end
@@ -20,8 +22,13 @@ class PortfoliosController < ApplicationController
         format.json { render json: @portfolio.errors, status: :unprocessable_entity }
       end
     end
+  end
 
+  def edit
 
+  end
+
+  def update
   end
 
   private
@@ -29,6 +36,10 @@ class PortfoliosController < ApplicationController
   def portfolio_params
     params.require(:portfolio).permit(:title, :subtitle, :body)
 
+  end
+
+  def set_portfolio
+    @portfolio = Portfolio.find(params[:id])
   end
 
 end
