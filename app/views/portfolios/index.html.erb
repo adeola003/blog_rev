@@ -11,6 +11,7 @@
 <%= image_tag item.thumb_image %>
 
 <% end %>
-<%= link_to 'Edit', edit_portfolio_path(item.id) %>
+<%= link_to 'Edit', edit_portfolio_path(item) %>
+<%= link_to 'Show details', portfolio_path(item) %>
 <% end %>
 

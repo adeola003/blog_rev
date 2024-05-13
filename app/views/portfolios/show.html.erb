@@ -1,0 +1,16 @@
+<h1>Portfolio show</h1>
+
+
+
+
+<p>Title: <%=@portfolio.title%> </p>
+<p>Subtitle: <%=@portfolio.subtitle%> </p>
+<p>Body: <%=@portfolio.body%> </p>
+
+<% if @portfolio.main_image? %>
+<%= image_tag @portfolio.main_image %>
+
+<% end %>
+<%= link_to 'Edit', edit_portfolio_path(@portfolio.id) %>
+
+
