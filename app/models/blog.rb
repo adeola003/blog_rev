@@ -1,4 +1,4 @@
 class Blog < ApplicationRecord
-  validadates :title, presence: true
-  validates :body, presence: true
+  validates_presence_of :title, :body
+  #validates :body, presence: true
 end
