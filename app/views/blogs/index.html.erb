@@ -4,10 +4,12 @@
 
 <div id="blogs">
   <% @blogs.each do |blog| %>
-  <%= blog.title.upcase %>
+  <%= link_to blog.status.upcase, blog %>
     <%= render blog %>
     <p>
-      <%= link_to "Show this blog", blog %>
+      <%= link_to "Details", blog %>
+      <%= link_to "Edit", edit_blog_path(blog) %>
+      <%= link_to "Delete", blog, method: :delete %>
     </p>
   <% end %>
 </div>
