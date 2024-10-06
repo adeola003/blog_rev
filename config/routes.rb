@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "pages#home"
   resources :blogs
   resources :portfolios
   # get "portfolios", to: 'portfolios#index'
