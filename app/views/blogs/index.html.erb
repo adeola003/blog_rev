@@ -4,7 +4,7 @@
 
 <div id="blogs">
   <% @blogs.each do |blog| %>
-  <%= link_to blog.status.upcase, blog %>
+  <%= link_to blog.status.upcase, toggle_status_blog_path(blog) %>
     <%= render blog %>
     <p>
       <%= link_to "Details", blog %>
