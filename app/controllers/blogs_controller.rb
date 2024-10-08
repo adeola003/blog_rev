@@ -58,9 +58,18 @@ class BlogsController < ApplicationController
   end
 
   def toggle_status
-    @blog.published! if @blog.draft?
-    @blog.draft! if @blog.published?
+    if @blog.draft?
+      @blog.published!
+    elsif @blog.published?
+      @blog.draft!
+    end
+    
+      # Save the blog to apply the changes to the database
+  if @blog.save
     redirect_to blogs_path, notice: "Status has been updated"
+  else
+    redirect_to blogs_path, alert: "There was an error updating the status"
+  end
     
   end
 
