@@ -3,6 +3,8 @@ class Portfolio < ApplicationRecord
   def self.ang
     where(subtitle: "Angular")
   end
+  
+  scope :ror, -> { where(subtitle: 'Ruby on Rails')}
 
   after_initialize :set_defaults
 
