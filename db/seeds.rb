@@ -11,15 +11,8 @@
   )
 end
 
-10.times do |x|
-  Blog.create!(
-    title: "Blog #{x}",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet blandit eros. Suspendisse sit amet est a diam consequat sollicitudin. Nam at gravida est. Quisque pretium nunc velit, a vulputate diam venenatis ut. Nullam ultricies, eros id congue euismod, erat augue fermentum ligula, vitae elementum erat quam eu elit. Nunc ultricies viverra lacus, eu placerat ex condimentum et. Duis iaculis molestie tellus a venenatis. Nunc vitae feugiat libero. Integer diam lorem, suscipit id dolor at, dignissim mollis quam. Nulla hendrerit lobortis porttitor. Maecenas eleifend eget neque sed blandit."
-    topic_id: Topic.last.id
-    )
-end
+puts "4 topics created"
 
-puts "10 Blogs created"
 
 9.times do |x|
   Portfolio.create!(
@@ -42,4 +35,22 @@ puts "9 Portfolios created"
 end
 
 puts "8 Skills created"
+
+10.times do |x|
+  Blog.create!(
+    title: "Blog #{x}",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet blandit eros. Suspendisse sit amet est a diam consequat sollicitudin. Nam at gravida est. Quisque pretium nunc velit, a vulputate diam venenatis ut. Nullam ultricies, eros id congue euismod, erat augue fermentum ligula, vitae elementum erat quam eu elit. Nunc ultricies viverra lacus, eu placerat ex condimentum et. Duis iaculis molestie tellus a venenatis. Nunc vitae feugiat libero. Integer diam lorem, suscipit id dolor at, dignissim mollis quam. Nulla hendrerit lobortis porttitor. Maecenas eleifend eget neque sed blandit.",
+    topic_id: Topic.last.id
+    )
+end
+
+puts "10 Blogs created"
+
+4.times do |x|
+  Portfolio.last.technologies.create!(
+    name: "Technology #{x}",
+  )
+end
+
+puts "4 Techs created"
 
