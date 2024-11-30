@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Portfolio show</h1>
+
+
+
+<p>Title: <%=@portfolio.title%> </p>
+<p>Subtitle: <%=@portfolio.subtitle%> </p>
+<p>Body: <%=@portfolio.body%> </p>
+
+<% if @portfolio.main_image? %>
+<%= image_tag @portfolio.main_image %>
+
+<% end %>
+<%= link_to 'Edit', edit_portfolio_path(@portfolio.id) %>
+<%= button_to 'delete', @portfolio, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Back to Portfolio list', portfolios_path %>
+
+

@@ -5,10 +5,13 @@
 
 <div id="blogs">
   <% @blogs.each do |blog| %>
+  <div><%= link_to blog.status.upcase, toggle_status_blog_path(blog) %>
     <%= render blog %>
     <p>
-      <%= link_to "Show this blog", blog %>
-    </p>
+      <%= link_to "Details", blog %>
+      <%= link_to "Edit", edit_blog_path(blog) %>
+      <%= link_to "Delete", blog, method: :delete %>
+    </p></div>
   <% end %>
 </div>
 

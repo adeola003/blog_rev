@@ -1,5 +1,7 @@
 class Blog < ApplicationRecord
-  validates :title, presence: true
-  validates :body, presence: true
-  
+  enum status: { draft: 0, published: 1} 
+  validates_presence_of :title, :body
+  #validates :body, presence: true
+  belongs_to :topic
+
 end
