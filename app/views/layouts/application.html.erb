@@ -14,10 +14,18 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <div>
+      <%if current_user%>
       <%= link_to "Home", root_path %>
       <%= link_to "about", about_path %>
       <%= link_to "Portfolios", portfolios_path %>
       <%= link_to "Blogs", blogs_path %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+
+      <%else%>
+      <%= link_to "Login", blogs_path %>
+      <% end %>
+
+      
     </div>
     <%= yield %>
   </body>
