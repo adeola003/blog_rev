@@ -19,10 +19,10 @@
       <%= link_to "about", about_path %>
       <%= link_to "Portfolios", portfolios_path %>
       <%= link_to "Blogs", blogs_path %>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      <%= button_to "Logout", destroy_user_session_path, method: :delete %>
 
       <%else%>
-      <%= link_to "Login", blogs_path %>
+      <%= link_to "Login", user_session_path %>
       <% end %>
 
       
