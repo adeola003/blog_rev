@@ -3,4 +3,5 @@ class Blog < ApplicationRecord
   validates_presence_of :title, :body
   #validates :body, presence: true
   belongs_to :topic
+
 end

@@ -2,6 +2,7 @@
 
 <h1>Blogs</h1>
 
+
 <div id="blogs">
   <% @blogs.each do |blog| %>
   <div><%= link_to blog.status.upcase, toggle_status_blog_path(blog) %>
