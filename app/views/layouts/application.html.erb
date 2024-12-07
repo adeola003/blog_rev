@@ -28,5 +28,19 @@
       
     </div>
     <%= yield %>
+
+    <%#using session to share data between all pages. This example show a model of having
+    <%# links in this format "main_url?website=facebook" on social media for example so that when user come facebook,
+    <%# session[;source value is equal to facebook which is the param passed in the url after ?website=***. The method for that have been added to the
+    <%# application controller through the SetSource concern: def set_source
+    <%# session[:source] = params[:website] if params[:website] end
+    
+    %>
+    
+    <% if session[:source] %>
+    <p>Thanks from visiting from <%= session[:source] %></p>
+      
+    <% end %>
+    
   </body>
 </html>
