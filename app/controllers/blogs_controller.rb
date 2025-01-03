@@ -13,6 +13,7 @@ class BlogsController < ApplicationController
   # GET /blogs/new
   def new
     @blog = Blog.new
+    byebug
   end
 
   # GET /blogs/1/edit

@@ -5,4 +5,26 @@
     <p><%= @topic.description %></p>
     <p>Created at: <%= @topic.created_at.strftime("%B %d, %Y") %></p>
     <p>Updated at: <%= @topic.updated_at.strftime("%B %d, %Y") %></p>
+    <p><%= link_to 'New Blog', new_topic_blog_path(@topic) %></p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @topic.blogs.each do |blog| %>
+                <tr>
+                    <td><%= blog.title %></td>
+                    <td>
+                        <%= link_to 'Show', topic_blog_path(@topic, blog) %> |
+                        <%= link_to 'Destroy', topic_blog_path(@topic, blog), method: :delete, data: { confirm: 'Are you sure?' } %>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
 </div>
+

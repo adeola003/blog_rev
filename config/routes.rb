@@ -10,7 +10,11 @@ Rails.application.routes.draw do
     end
   end
   resources :portfolios
-  resources :topics
+  resources :topics do
+
+    resources :blogs, only: [:new, :create, :show, :destroy]
+
+  end
   # get "portfolios", to: 'portfolios#index'
 
   # get "/portfolios/new", to: 'portfolios#new'

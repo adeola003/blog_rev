@@ -1,10 +1,12 @@
 <h1>Topics</h1>
+<%= link_to 'New topic', new_topic_path %>
 
 <% @topics.each do |topic| %>
-    <h2><%= topic.name %></h2>
+    <h2><%= topic.title %></h2>
     <ul>
         <% topic.blogs.each do |blog| %>
             <li><%= link_to blog.title, blog_path(blog) %></li>
         <% end %>
     </ul>
+    <%= link_to 'Details', topic  %>
 <% end %>
