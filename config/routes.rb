@@ -4,12 +4,13 @@ Rails.application.routes.draw do
   root "pages#home"
   get 'about', to: 'pages#about'
   resources :pages
-  resources :blogs do 
+  resources :blogs do
     member do
       get :toggle_status
     end
   end
   resources :portfolios
+  resources :topics
   # get "portfolios", to: 'portfolios#index'
 
   # get "/portfolios/new", to: 'portfolios#new'
