@@ -13,7 +13,6 @@ class BlogsController < ApplicationController
   # GET /blogs/new
   def new
     @blog = Blog.new
-    byebug
   end
 
   # GET /blogs/1/edit
@@ -82,6 +81,6 @@ class BlogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_params
-      params.require(:blog).permit(:title, :body)
+      params.require(:blog).permit(:title, :body, :topic_id)
     end
 end
