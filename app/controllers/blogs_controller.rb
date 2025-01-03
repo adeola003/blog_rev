@@ -63,14 +63,14 @@ class BlogsController < ApplicationController
     elsif @blog.published?
       @blog.draft!
     end
-    
+
       # Save the blog to apply the changes to the database
   if @blog.save
     redirect_to blogs_path, notice: "Status has been updated"
   else
     redirect_to blogs_path, alert: "There was an error updating the status"
   end
-    
+
   end
 
   private

@@ -1,0 +1,8 @@
+<%# app/views/topics/_topic.html.erb %>
+
+<div class="topic">
+    <h2><%= @topic.title %></h2>
+    <p><%= @topic.description %></p>
+    <p>Created at: <%= @topic.created_at.strftime("%B %d, %Y") %></p>
+    <p>Updated at: <%= @topic.updated_at.strftime("%B %d, %Y") %></p>
+</div>

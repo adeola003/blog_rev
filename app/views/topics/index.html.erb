@@ -1,0 +1,10 @@
+<h1>Topics</h1>
+
+<% @topics.each do |topic| %>
+    <h2><%= topic.name %></h2>
+    <ul>
+        <% topic.blogs.each do |blog| %>
+            <li><%= link_to blog.title, blog_path(blog) %></li>
+        <% end %>
+    </ul>
+<% end %>
