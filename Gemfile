@@ -69,3 +69,11 @@ group :test do
 
 end
 gem "devise"
+
+gem "bigdecimal"
+
+gem "mutex_m"
+
+#gem byebug for creating breakpoints in the code for debugging
+gem "byebug"
+
